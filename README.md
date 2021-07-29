@@ -1,7 +1,7 @@
 ﻿
 # **BovDB: A data set of stock quotes for Machine Learning on all companies from B3 between 1995 and 2020**
 
-**Fabian Corrêa Cardoso**, Juan Malska**, Paulo Ramiro**, Giancarlo Lucca**, Eduardo N. Borges**, Viviane de Mattos**, Rafael Berri**
+**Fabian Corrêa Cardoso, Juan Malska, Paulo Ramiro, Giancarlo Lucca, Eduardo N. Borges, Viviane de Mattos, Rafael Berri**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
