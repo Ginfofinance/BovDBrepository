@@ -17,7 +17,7 @@ Instituto de Matemática, Estatística e Física (IMEF) Universidade Federal do 
 
 *\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_*
 # **Download and Citation Request**
-The database as well as the sample files are available for download in the repository named “BovDBrepository[9](#_bookmark22)”, licensed under CC BY-NC 4.0. In Table [1, ](#_bookmark20)by columns we provide the arrangement of the data files and their relative content. We highlight that there are two main folders available: the first, called “Codes”, holds examples of accessing the base and the second, “DataBase”, contains the project’s database (See Section [4). ](#_bookmark10)All files related with the project are accessed by these folders and instructions to execute a test example is provided in the readme file.
+The database as well as the sample files are available for download in the repository named “BovDBrepository”, licensed under CC BY-NC 4.0. In Table, by columns we provide the arrangement of the data files and their relative content. We highlight that there are two main folders available: the first, called “Codes”, holds examples of accessing the base and the second, “DataBase”, contains the project’s database. All files related with the project are accessed by these folders and instructions to execute a test example is provided in the readme file.
 
 **Table 1. The overview of the provided git repository.**
 
@@ -37,5 +37,5 @@ In case the BovDB is used for scientific or academic purposes, include a citatio
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 # **Reference:**
-Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from b3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase*.  
+"Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from b3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase"*.  
 
