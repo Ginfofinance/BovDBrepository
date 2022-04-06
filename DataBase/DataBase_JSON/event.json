@@ -1,0 +1,62 @@
+[
+    {
+        "description": "ex-dividendos",
+        "ds_bovespa": "ED",
+        "id_event": 1
+    },
+    {
+        "description": "ex-subscrição",
+        "ds_bovespa": "ES",
+        "id_event": 2
+    },
+    {
+        "description": "direitos integrais",
+        "ds_bovespa": "INT",
+        "id_event": 3
+    },
+    {
+        "description": "ex-bonificacao",
+        "ds_bovespa": "EB",
+        "id_event": 4
+    },
+    {
+        "description": "ex-cisao",
+        "ds_bovespa": "EC",
+        "id_event": 5
+    },
+    {
+        "description": "ex-juros",
+        "ds_bovespa": "EJ",
+        "id_event": 6
+    },
+    {
+        "description": "ex-restituicao",
+        "ds_bovespa": "ER",
+        "id_event": 7
+    },
+    {
+        "description": "ex-grupamento",
+        "ds_bovespa": "EG",
+        "id_event": 8
+    },
+    {
+        "description": "ex-direitos",
+        "ds_bovespa": "EX",
+        "id_event": 9
+    },
+    {
+        "description": "certificado de deposito de acoes (units)",
+        "ds_bovespa": "UNT",
+        "id_event": 10
+    },
+    {
+        "description": "recibos BDR (Brasizilian Despoitary Receipts",
+        "ds_bovespa": "DR3",
+        "id_event": 11
+    },
+    {
+        "description": "recibos BDR (Brasizilian Despoitary Receipts",
+        "ds_bovespa": "DRN",
+        "id_event": 12
+    }
+]
