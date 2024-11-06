@@ -32,9 +32,10 @@ The database as well as the sample files are available for download in the repos
 
 In case the BovDB is used for scientific or academic purposes, include a citation to this paper as following in Section “Reference”.
 
-
-
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+# **Versions**
+
 
 # **Reference:**
 "Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from b3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase"*.  
