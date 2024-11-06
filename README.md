@@ -1,7 +1,7 @@
 ﻿
 # **BovDB: A data set of stock quotes for Machine Learning on all companies from B3 between 1995 and 2020**
 
-**Fabian Corrêa Cardoso, Juan Malska, Paulo Ramiro, Giancarlo Lucca, Eduardo N. Borges, Viviane de Mattos, Rafael Berri**
+**Andrey Vinicius Souza, Fabian Corrêa Cardoso, Juan Malska, Paulo Ramiro, Giancarlo Lucca, Eduardo N. Borges, Viviane de Mattos, Rafael Berri**
 
 **\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
 
@@ -13,7 +13,7 @@ Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
 
 Instituto de Matemática, Estatística e Física (IMEF) Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
 
-*{*fabiancorrea, juanandreyvmalska, paulojr2016canaa, giancarlo.lucca, eduardoborges, vivianemattos, rafaelberri*}*@furg.br
+*{*andreyvinicius, fabiancorrea, juanandreyvmalska, paulojr2016canaa, giancarlo.lucca, eduardoborges, vivianemattos, rafaelberri*}*@furg.br
 
 *\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_*
 # **Download and Citation Request**
