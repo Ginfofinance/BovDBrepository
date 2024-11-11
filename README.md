@@ -14,7 +14,7 @@ Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
 Instituto de Matemática, Estatística e Física (IMEF) Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
 
 *{*andreyvinicius, fabiancorrea, juanandreyvmalska, paulojr2016canaa, giancarlo.lucca, eduardoborges, vivianemattos, rafaelberri*}*@furg.br
-https://www.xbox.com/pt-BR/play
+
 *\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_*
 # **Download and Citation Request**
 The database, as well as the sample files, are available for download in the repository called “BovDBrepository”, licensed under CC BY-NC 4.0. In this repository, in the table by columns, we provide the arrangement of the data files and their relative content. It is worth mentioning that the database now has two versions, expanding more on the content in the next topic "Versions", and for the version of this repository there are two main folders available: the first, called “BovdbV1”, contains the project database in its first version and the second, “Codes”, contains examples of accessing the database. All files related to the project are accessed through these folders and instructions for running a test example are provided in the readme file.
