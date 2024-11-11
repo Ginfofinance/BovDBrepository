@@ -34,19 +34,19 @@ In case the BovDB is used for scientific or academic purposes, include a citatio
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 
 # **Versions**
-Esta seção abrange as novas versões do conjunto de dados. Nosso banco de dados tem a seguinte atualização "BovdbV2" disponível em "https://github.com/Ginfofinance/BovDbV2repository.git", nesta versão do conjunto de dados apresentamos a atualização de todas as empresas na B3 entre 1995 a 2024, com a implementação e atualização das tabelas incluindo a tabela Price5 que possui os dados intraday de 5 minutos entre janeiro e junho de 2024. A tabela 2 fornece a visão geral do diretorio do repositorio para o conteudo git fornecido.
+This section covers the new versions of the dataset. Our database has the following update "BovdbV2" available at "https://github.com/Ginfofinance/BovDbV2repository.git", in this version of the dataset we present the update of all companies in B3 between 1995 to 2024, with the implementation and update of the tables including the Price5 table that has the 5-minute intraday data between January and June 2024. Table 2 provides the overview of the repository directory for the provided git content.
 
-**Tabela 2. A visão geral do repositório "https://github.com/Ginfofinance/BovDbV2repository.git":**
+**Table 2. Overview of the repository "https://github.com/Ginfofinance/BovDbV2repository.git":**
 
-**Conteúdo do Diretório**
+**Directory Contents**
 
-*BovDbV2repository* Diretório raiz do repositório
+*BovDbV2repository* Repository root directory
 
-*BovDbV2repository/BovdbV2* Diretório do banco de dados versão 2.0
+*BovDbV2repository/BovdbV2* Database directory version 2.0
 
-*BovDbV2repository/Códigos* Pasta com exemplos de acesso/uso do banco de dados
+*BovDbV2repository/Codes* Folder with examples of database access/use
 
-Caso o BovDB seja usado para fins científicos ou acadêmicos, inclua uma citação a este artigo como segue na Seção "Referência".
+If BovDB is used for scientific or academic purposes, please include a citation to this article as follows in the "Reference" section.
 
 \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
 # **Reference:**
