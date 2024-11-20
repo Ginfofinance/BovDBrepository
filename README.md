@@ -44,6 +44,8 @@ This section covers the new versions of the dataset. Our database has the follow
 
 *BovDbV2repository/BovdbV2* Database directory version 2.0
 
+*BovDbV2repository/BovdbV2/link_database_dropbox.pdf* link to download the database in .rar from dropbox
+
 *BovDbV2repository/Codes* Folder with examples of database access/use
 
 If BovDB is used for scientific or academic purposes, please include a citation to this article as follows in the "Reference" section.
