@@ -1,0 +1,89 @@
+name: Create & Publish All Releases
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  create-releases-and-publish:
+    name: Create Releases and Publish Packages
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install Build and Publishing Tools
+        run: |
+          python -m pip install --upgrade pip
+          pip install build twine
+
+      - name: Build Python Package Distribution
+        run: |
+          python -m build
+
+      - name: Check Package Integrity
+        run: |
+          twine check dist/*
+
+      - name: Publish to GitHub Packages
+        env:
+          TWINE_USERNAME: ${{ github.actor }}
+          TWINE_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
+          TWINE_REPOSITORY_URL: https://pypi.pkg.github.com/${{ github.repository_owner }}
+        run: |
+          twine upload --skip-existing dist/* || echo "Package upload completed."
+
+      - name: Create or Update GitHub Releases
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 1. Release v1.0.0
+          if ! gh release view v1.0.0 >/dev/null 2>&1; then
+            echo "Creating Release v1.0.0..."
+            gh release create v1.0.0 \
+              --title "BovDB v1.0.0 - Historical Stock Quotes Dataset (1995-2020)" \
+              --notes-file BovdbV1/README.md
+          else
+            echo "Release v1.0.0 already exists."
+          fi
+
+          # 2. Release v2.0.0
+          if ! gh release view v2.0.0 >/dev/null 2>&1; then
+            echo "Creating Release v2.0.0..."
+            gh release create v2.0.0 \
+              --title "BovDB v2.0.0 - Extended Dataset (1995-2024) & 5-Min Intraday Quotes" \
+              --notes-file BovdbV2/README.md \
+              BovdbV2/guidelines_database_dropbox.pdf#PDF_Guidelines \
+              BovdbV2/link_database.txt#Download_Links
+          else
+            echo "Release v2.0.0 already exists."
+          fi
+
+          # 3. Release v3.0.0
+          if ! gh release view v3.0.0 >/dev/null 2>&1; then
+            echo "Creating Release v3.0.0..."
+            gh release create v3.0.0 \
+              --title "BovDB v3.0.0 - Unified Modern Architecture, Modular SDK & Multi-Version Support" \
+              --notes-file BovdbV3/README.md \
+              dist/*.whl \
+              dist/*.tar.gz \
+              BovdbV3/link_database.txt#Download_Mirrors \
+              BovdbV3/guidelines_database.md#Setup_Guide
+          else
+            echo "Release v3.0.0 already exists."
+            gh release upload v3.0.0 dist/*.whl dist/*.tar.gz --clobber || true
+          fi

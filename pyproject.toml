@@ -8,7 +8,8 @@ version = "3.0.0"
 description = "BovDB: Stock Quotes Dataset for Machine Learning on all companies from B3"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "CC-BY-NC-4.0" }
+license = "CC-BY-NC-4.0"
+license-files = ["LICENSE.md"]
 authors = [
   { name = "GInfo Research Group - FURG", email = "contato.ginfo@furg.br" },
   { name = "Andrey Vinicius Souza", email = "andreyvinicius@furg.br" }
