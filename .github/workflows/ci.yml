@@ -40,3 +40,8 @@ jobs:
       - name: Test Package Import
         run: |
           python -c "import bovdb; print('bovdb version:', bovdb.__version__)"
+
+      - name: Run Functional Test Suite (pytest)
+        run: |
+          pip install pytest
+          pytest -v
