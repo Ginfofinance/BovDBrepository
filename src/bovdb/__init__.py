@@ -1,5 +1,5 @@
 """
-BovDB: Stock Quotes Dataset for Machine Learning on Brazilian Equities (B3).
+BovDB: Python Toolkit for Stock Quotes Dataset on Brazilian Equities (B3).
 """
 
 from .connection import get_connection, resolve_database_path
@@ -16,7 +16,13 @@ from .visualization import (
     plot_annual_stats,
 )
 
-__version__ = "3.0.0"
+# Semantic SDK package version
+__version__ = "0.1.0"
+
+# Dataset version metadata
+DEFAULT_DATASET_VERSION = "3.0"
+SUPPORTED_DATASET_VERSIONS = ("1.0", "2.0", "3.0")
+
 __all__ = [
     "get_connection",
     "resolve_database_path",
@@ -28,4 +34,7 @@ __all__ = [
     "plot_candlestick",
     "plot_intraday_5min",
     "plot_annual_stats",
+    "__version__",
+    "DEFAULT_DATASET_VERSION",
+    "SUPPORTED_DATASET_VERSIONS",
 ]

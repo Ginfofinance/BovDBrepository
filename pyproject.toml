@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bovdb"
-version = "3.0.0"
-description = "BovDB: Stock Quotes Dataset for Machine Learning on all companies from B3"
+version = "0.1.0"
+description = "BovDB: Python Toolkit and Stock Quotes Dataset for Machine Learning on B3 Equities"
 readme = "README.md"
 requires-python = ">=3.10"
 license = "CC-BY-NC-4.0"
@@ -28,10 +28,28 @@ classifiers = [
 dependencies = [
   "pandas>=2.0.0",
   "numpy>=1.24.0",
-  "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+viz = [
   "matplotlib>=3.7.0",
   "mplfinance>=0.12.9b0",
   "plotly>=5.14.0",
+]
+analysis = [
+  "scipy>=1.10.0",
+]
+dev = [
+  "pytest>=7.0.0",
+  "build",
+  "twine",
+]
+all = [
+  "matplotlib>=3.7.0",
+  "mplfinance>=0.12.9b0",
+  "plotly>=5.14.0",
+  "scipy>=1.10.0",
+  "pytest>=7.0.0",
 ]
 
 [project.urls]
