@@ -1,25 +1,24 @@
-# BovDB - Tested Package Versions
+# BovDB - Package Dependencies
 # Python >= 3.10
-# Generated from development environment on 2026-08-25
 #
-# Install all: pip install -r requirements.txt
-# Or install via pyproject.toml: pip install -e ".[all]"
+# Install: pip install -r requirements.txt
+# Or via pyproject.toml: pip install -e ".[all]"
 
 # Core dependencies
-pandas==3.0.3
-numpy==2.4.6
+pandas>=2.0.0
+numpy>=1.24.0
 
 # Visualization
-matplotlib==3.11.1
-mplfinance==0.12.10b0
-plotly==6.9.0
+matplotlib>=3.7.0
+mplfinance>=0.12.9b0
+plotly>=5.14.0
 
 # Analysis
-scipy==1.18.1
+scipy>=1.10.0
 
 # Jupyter / Interactive Analysis
 jupyter>=1.0.0
 ipywidgets>=8.0.0
 
 # Development / Testing
-pytest==9.0.3
+pytest>=7.0.0
