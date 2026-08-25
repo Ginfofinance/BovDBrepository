@@ -1,0 +1,19 @@
+================================================================================
+BovDB Version 3.0 - Database Download Links
+================================================================================
+
+DropBox (Official Mirror):
+https://www.dropbox.com/scl/fi/sris4tnltenf0twm20vt2/Database_define.rar?rlkey=0dnjx3xn7efdigc1neibe4kee&st=att3x9re&dl=0
+
+Google Drive (Backup Mirror):
+[Update with official Google Drive link when available]
+
+HuggingFace / Zenodo DOI:
+[Update with official Zenodo / HuggingFace DOI when available]
+
+Instructions:
+1. Download the compressed file (.rar / .zip).
+2. Extract the file `DataBase.db` (or `Database_define.db`).
+3. Place the extracted database in the `DataBase/` directory of this repository.
+4. Refer to `guidelines_database.md` for complete setup instructions.
+================================================================================

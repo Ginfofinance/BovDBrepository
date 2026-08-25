@@ -1,0 +1,33 @@
+name: Bug report
+description: Report an error, bug, or problem in code, queries, or documentation.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for reporting an issue! Please do not include credentials, proprietary data, or uncompressed dataset binaries."
+  - type: textarea
+    id: problem
+    attributes:
+      label: Description of the Problem
+      description: What happened and what was the expected behavior?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: Provide the command, script, ticker, or query that triggered the issue.
+      placeholder: |
+        1. Run `python Codes/daily_candlesticks_chart.py`
+        2. Enter option `1`
+        3. See error ...
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: "e.g., Windows 11 / Ubuntu 22.04, Python 3.11, pandas 2.2.0"
+    validations:
+      required: true

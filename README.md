@@ -1,56 +1,181 @@
-﻿
-# **BovDB: A data set of stock quotes for Machine Learning on all companies from B3**
+# BovDB: Stock Quotes Dataset for Machine Learning on B3 Equities
+
+[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](LICENSE.md)
+[![Python Version](https://img.shields.io/badge/python-3.10%20%7C%203.11%20%7C%203.12-blue.svg)](pyproject.toml)
+[![Database](https://img.shields.io/badge/Database-SQLite-003B57.svg?logo=sqlite&logoColor=white)](docs/architecture.md)
+[![B3 Equities](https://img.shields.io/badge/Market-B3%20Brazil-004B87.svg)](https://www.b3.com.br/)
+[![CI Checks](https://github.com/Ginfofinance/BovDBrepository/actions/workflows/ci.yml/badge.svg)](https://github.com/Ginfofinance/BovDBrepository/actions)
+
+---
 
 **Andrey Vinicius Souza, Fabian Corrêa Cardoso, Juan Malska, Paulo Ramiro, Giancarlo Lucca, Eduardo N. Borges, Viviane de Mattos, Rafael Berri**
 
-**\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_**
+* **Grupo de Pesquisa em Informática na Gestão da Informação e Finanças (GINFO)**
+* **Programa de Pós-Graduação em Modelagem Computacional (PPGMC)** — Universidade Federal do Rio Grande (FURG)
+* **Centro de Ciências Computacionais (C3)** — Universidade Federal do Rio Grande (FURG)
+* **Instituto de Matemática, Estatística e Física (IMEF)** — Universidade Federal do Rio Grande (FURG)
+* **Contato**: `{andreyvinicius, fabiancorrea, giancarlo.lucca, eduardoborges, vivianemattos, rafaelberri}@furg.br`
 
-Programa de Pós-Graduação em Modelagem Computacional (PPGMC) Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
+---
 
-Centro de Ciências Computacionais (C3)
+## Overview
 
-Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
+**BovDB** is an open-access, relational dataset of historical stock quotes and intraday data covering all companies listed on the Brazilian Stock Exchange (**B3**), designed for machine learning benchmarks, econometric modeling, time-series forecasting, and algorithmic trading research.
 
-Instituto de Matemática, Estatística e Física (IMEF) Universidade Federal do Rio Grande (FURG), Rio Grande – RS – Brazil
+### Key Capabilities
+- **Complete Equity Coverage**: Covers all tickers traded on B3 across common (ON), preferred (PN), units (UNT), and Brazilian Depositary Receipts (BDRs).
+- **Corporate Action Adjustments**: Accounts for stock splits, reverse splits (inplits), and bonuses via dedicated `factor` multipliers.
+- **Multi-Resolution Data**: Includes daily historical OHLCV series (1995–Present) along with high-frequency 5-minute intraday bars (`price5`).
+- **Unified Python SDK**: Modular `bovdb` Python package for zero-config SQLite connections, typed data extraction, and interactive visualizers.
+- **Zero-Configuration Relational Storage**: Stored in a high-performance, single-file SQLite database with straightforward Python integration.
 
-*{*andreyvinicius, fabiancorrea, juanandreyvmalska, paulojr2016canaa, giancarlo.lucca, eduardoborges, vivianemattos, rafaelberri*}*@furg.br
+---
 
-*\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_*
-# **Download and Citation Request**
-The database, as well as the sample files, are available for download in the repository called “BovDBrepository”, licensed under CC BY-NC 4.0. In this repository, in the table by columns, we provide the arrangement of the data files and their relative content. It is worth mentioning that the database now has two versions, expanding more on the content in the next topic "Versions", and for the version of this repository there are two main folders available: the first, called “BovdbV1”, contains the project database in its first version and the second, “Codes”, contains examples of accessing the database. All files related to the project are accessed through these folders and instructions for running a test example are provided in the readme file.
+## Dataset Versions & Scope
 
-**Table 1. The overview of the provided git repository.**
+| Version | Status / Folder | Period | Resolution | Features & Archive Formats |
+| :--- | :--- | :--- | :--- | :--- |
+| **BovDB v1.0** | [`BovdbV1/`](BovdbV1/) | 1995 – 2020 | Daily | All B3 equities, daily OHLCV, adjustment factors. Formats: CSV, JSON, SQLite (`.zip`). |
+| **BovDB v2.0** | [`BovdbV2/`](BovdbV2/) | 1995 – 2024 | Daily + Intraday | Daily historical quotes + 5-min intraday `price5` (Jan–Jun 2024). DropBox archive. |
+| **BovDB v3.0** | [`BovdbV3/`](BovdbV3/) | 1995 – Present | Daily + Intraday | Modular `bovdb` Python package, CI/CD, complete schema dictionary, multi-mirror links. |
 
-**Directory	Content**
+---
 
-*BovDBrepository*	Repository root directory
+## Repository Layout
 
-*BovDBrepository/BovdbV1*	Database version 1.0 directory
+```text
+.
+├── .github/             # CI workflows, issue templates and PR templates
+├── BovdbV1/             # Version 1.0 historical archives (CSV, JSON, SQLite zip)
+├── BovdbV2/             # Version 2.0 download links and guidelines (PDF)
+├── BovdbV3/             # Version 3.0 download links and database guidelines
+├── Codes/               # Example analysis scripts and Jupyter notebooks
+├── DataBase/            # Local directory for SQLite database file (DataBase.db)
+├── docs/                # Architecture, data dictionary, and reproducibility guides
+├── src/bovdb/           # Modular Python package for querying and visualization
+├── .env.example         # Environment configuration template
+├── .gitignore           # Git ignore rules (binaries, databases, caches)
+├── CITATION.cff         # Citation File Format metadata
+├── CODE_OF_CONDUCT.md   # Community and research code of conduct
+├── CONTRIBUTING.md      # Guidelines for contributors
+├── generate_project_map.py # Utility to generate visual repository map
+├── LICENSE.md           # Creative Commons Attribution-NonCommercial 4.0
+├── pyproject.toml       # Python package configuration
+├── reference.md         # Text and BibTeX academic citations
+├── requirements.txt     # Python project dependencies
+└── SECURITY.md          # Vulnerability reporting policy
+```
 
-*BovDBrepository/Codes*	Folder with examples of access/use of the database
+---
 
-In case the BovDB is used for scientific or academic purposes, include a citation to this paper as following in Section “Reference”.
+## Quick Start
 
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+### 1. Clone & Environment Setup
 
-# **Versions**
-This section covers the new versions of the dataset. Our database has the following update "BovdbV2" available at "https://github.com/Ginfofinance/BovDbV2repository.git", in this version of the dataset we present the update of all companies in B3 between 1995 to 2024, with the implementation and update of the tables including the Price5 table that has the 5-minute intraday data between January and June 2024. Table 2 provides the overview of the repository directory for the provided git content.
+```bash
+git clone https://github.com/Ginfofinance/BovDBrepository.git
+cd BovDBrepository
 
-**Table 2. Overview of the repository "https://github.com/Ginfofinance/BovDbV2repository.git":**
+# Create and activate virtual environment
+python -m venv .venv
 
-**Directory Contents**
+# On Windows:
+.venv\Scripts\activate
+# On Linux / macOS:
+source .venv/bin/activate
 
-*BovDbV2repository* Repository root directory
+# Install dependencies and local bovdb package
+pip install -r requirements.txt
+pip install -e .
+```
 
-*BovDbV2repository/BovdbV2* Database directory version 2.0
+### 2. Download the Database
 
-*BovDbV2repository/BovdbV2/link_database_dropbox.pdf* link to download the database in .rar from dropbox
+1. Open [`BovdbV3/link_database.txt`](BovdbV3/link_database.txt) (or [`BovdbV2/link_database.txt`](BovdbV2/link_database.txt)) to access download links.
+2. Download and extract `Database_define.rar` (or `.zip`).
+3. Place the extracted SQLite database file inside the `DataBase/` folder:
+   ```text
+   DataBase/DataBase.db
+   ```
+*(Optional)* You can also set a custom path using the `BOVDB_PATH` environment variable.
 
-*BovDbV2repository/Codes* Folder with examples of database access/use
+### 3. Run Example Scripts
 
-If BovDB is used for scientific or academic purposes, please include a citation to this article as follows in the "Reference" section.
+- **Daily Candlestick Chart (with and without factor adjustment)**:
+  ```bash
+  python Codes/daily_candlesticks_chart.py
+  ```
 
-\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
-# **Reference:**
-"Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from b3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase"*.  
+- **Annual Mean and Standard Deviation Graph**:
+  ```bash
+  python Codes/annual_mean_and_standard_deviation_graph.py
+  ```
 
+- **Interactive 5-Minute Intraday Candlestick Chart**:
+  ```bash
+  python Codes/intraday_5min_candlestick.py
+  ```
+
+- **Top & Bottom Extrema Detection (Jupyter Notebook)**:
+  ```bash
+  jupyter notebook Codes/low_and_bottom.ipynb
+  ```
+
+---
+
+## Python API Example
+
+You can query the dataset directly in your research workflows using the `bovdb` package:
+
+```python
+from bovdb import get_connection, get_daily_prices, get_intraday_5min, plot_candlestick, plot_intraday_5min
+
+# Automatically connects to DataBase/DataBase.db or BOVDB_PATH
+conn = get_connection()
+
+# 1. Fetch split-adjusted daily prices for Petrobras (PETR4)
+df_daily = get_daily_prices(conn, ticker="PETR4", start_date="2023-01-01", end_date="2024-06-30", adjusted=True)
+plot_candlestick(df_daily, ticker_name="PETR4 (Adjusted)")
+
+# 2. Fetch 5-minute intraday quotes
+df_intra = get_intraday_5min(conn, ticker="PETR4", start_date="2024-06-26", end_date="2024-06-26")
+plot_intraday_5min(df_intra, day="2024-06-26", ticker_name="PETR4")
+
+conn.close()
+```
+
+---
+
+## Documentation
+
+- [Architecture & Design](docs/architecture.md) — Relational ER model and ingestion pipeline.
+- [Data Dictionary](docs/data-dictionary.md) — Detailed table schemas (`company`, `ticker`, `price`, `price5`).
+- [Data Provenance & Reproducibility](docs/reproducibility.md) — Guidelines for empirical research, seed setting, and adjustment factor calculations.
+- [Contributing Guide](CONTRIBUTING.md) — How to propose enhancements and submit pull requests.
+- [Code of Conduct](CODE_OF_CONDUCT.md) — Community standards and academic integrity.
+- [Security Policy](SECURITY.md) — Guidelines for reporting vulnerabilities.
+
+---
+
+## Citation
+
+If you use **BovDB** in scientific publications or academic projects, please cite:
+
+```bibtex
+@inproceedings{cardoso2021bovdb,
+  title     = {Bovdb: The data set of stock quotes for machine learning on all companies from B3 between 1995 and 2020},
+  author    = {Cardoso, Fabian and Malska, Juan and Ramiro, Paulo and Lucca, Giancarlo and Borges, Eduardo N and Mattos, Viviane de and Berri, Rafael},
+  booktitle = {Proceedings of the Brazilian Symposium on Databases - Dataset Showcase},
+  year      = {2021},
+  organization = {SBC}
+}
+```
+
+Text citation:
+> **Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from B3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase (SBBD)***.
+
+---
+
+## License
+
+This dataset and accompanying software are licensed under the [Creative Commons Attribution-NonCommercial 4.0 International License](LICENSE.md) (CC BY-NC 4.0).

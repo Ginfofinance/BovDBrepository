@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bovdb"
+version = "3.0.0"
+description = "BovDB: Stock Quotes Dataset for Machine Learning on all companies from B3"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "CC-BY-NC-4.0" }
+authors = [
+  { name = "GInfo Research Group - FURG", email = "contato.ginfo@furg.br" },
+  { name = "Andrey Vinicius Souza", email = "andreyvinicius@furg.br" }
+]
+keywords = ["finance", "b3", "dataset", "machine-learning", "stocks", "brazil", "bovdb"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Science/Research",
+  "Topic :: Scientific/Engineering :: Information Analysis",
+  "Topic :: Office/Business :: Financial :: Investment",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+dependencies = [
+  "pandas>=2.0.0",
+  "numpy>=1.24.0",
+  "scipy>=1.10.0",
+  "matplotlib>=3.7.0",
+  "mplfinance>=0.12.9b0",
+  "plotly>=5.14.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Ginfofinance/BovDBrepository"
+Repository = "https://github.com/Ginfofinance/BovDBrepository.git"
+"Bug Tracker" = "https://github.com/Ginfofinance/BovDBrepository/issues"

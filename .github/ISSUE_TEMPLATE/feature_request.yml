@@ -1,0 +1,24 @@
+name: Feature or dataset request
+description: Suggest an enhancement, new analysis script, or dataset feature.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Feature / Enhancement Proposal
+      description: Describe the feature, utility, or analysis you would like to see added.
+    validations:
+      required: true
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation & Use Case
+      description: Explain why this feature is useful for machine learning, finance, or econometric research on B3 data.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Additional Context / Alternatives Considered
+      description: Any other context, references, or alternative solutions.

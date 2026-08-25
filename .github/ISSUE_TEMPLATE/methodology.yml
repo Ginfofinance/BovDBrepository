@@ -1,0 +1,24 @@
+name: Methodology or research proposal
+description: Propose a methodological enhancement, validation metric, or data quality check.
+title: "[Research]: "
+labels: [research]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Research / Methodological Question
+      description: What specific research question or data modeling problem does this proposal address?
+    validations:
+      required: true
+  - type: textarea
+    id: method
+    attributes:
+      label: Proposed Method & Data Requirements
+      description: Detail the methodology, mathematical formulations, tables used, and validation criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: limitations
+    attributes:
+      label: Assumptions and Limitations
+      description: Detail any potential biases, survivorship considerations, lookahead bias, or data limitations.

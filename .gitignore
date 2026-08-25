@@ -1,0 +1,61 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+env.bak/
+venv.bak/
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Database files and large binaries
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.rar
+*.tar.gz
+*.7z
+*.parquet
+*.feather
+*.h5
+*.hdf5
+
+# Data directory contents (keep README.md and .gitkeep)
+DataBase/*
+!DataBase/README.md
+!DataBase/.gitkeep
+
+# Exclude generated figures/charts except documentation assets
+outputs/
+tmp/
+scratch/
+daily_candlesticks_chart*.pdf
+annual_mean_and_standard_deviation_graph.pdf
+*.png
+*.jpg
+*.svg
+
+# Environment variables & secrets
+.env
+.env.local
+.env.*.local
+
+# IDE and OS files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.DS_Store
+Thumbs.db
