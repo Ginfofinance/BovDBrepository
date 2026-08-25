@@ -5,6 +5,7 @@
 [![Database](https://img.shields.io/badge/Database-SQLite-003B57.svg?logo=sqlite&logoColor=white)](docs/architecture.md)
 [![B3 Equities](https://img.shields.io/badge/Market-B3%20Brazil-004B87.svg)](https://www.b3.com.br/)
 [![CI Checks](https://github.com/Ginfofinance/BovDBrepository/actions/workflows/ci.yml/badge.svg)](https://github.com/Ginfofinance/BovDBrepository/actions)
+[![DOI](https://img.shields.io/badge/DOI-10.7910%2FDVN%2FTMB4IG-blue.svg)](https://doi.org/10.7910/DVN/TMB4IG)
 
 ---
 
@@ -35,9 +36,9 @@
 
 | Version | Status / Folder | Period | Resolution | Features & Archive Formats |
 | :--- | :--- | :--- | :--- | :--- |
-| **BovDB v1.0** | [`BovdbV1/`](BovdbV1/) | 1995 – 2020 | Daily | All B3 equities, daily OHLCV, adjustment factors. Formats: CSV, JSON, SQLite (`.zip`). |
-| **BovDB v2.0** | [`BovdbV2/`](BovdbV2/) | 1995 – 2024 | Daily + Intraday | Daily historical quotes + 5-min intraday `price5` (Jan–Jun 2024). DropBox archive. |
-| **BovDB v3.0** | [`BovdbV3/`](BovdbV3/) | 1995 – Present | Daily + Intraday | Modular `bovdb` Python package, CI/CD, complete schema dictionary, multi-mirror links. |
+| **BovDB v1.0** | [`BovdbV1/`](BovdbV1/) | 1995 – 2020 | Daily | All B3 equities, daily OHLCV, adjustment factors. Formats: CSV, JSON, SQLite (`.zip`). Published at SBBD 2021. |
+| **BovDB v2.0** | [`BovdbV2/`](BovdbV2/) — [Harvard Dataverse](https://doi.org/10.7910/DVN/TMB4IG) | 1995 – 2024 | Daily + Intraday | Daily historical quotes + 5-min intraday `price5` (Jan–Jun 2024). **Official published version** (DOI: [10.7910/DVN/TMB4IG](https://doi.org/10.7910/DVN/TMB4IG)). |
+| **BovDB v3.0** | 🚧 In Development — [`BovdbV3/`](BovdbV3/) | 1995 – Present | Daily + Intraday | Modular `bovdb` Python package, CI/CD, complete schema dictionary, multi-mirror links. |
 
 ---
 
@@ -135,6 +136,22 @@ conn.close()
 
 If you use **BovDB** in scientific publications or academic projects, please cite:
 
+### BovDB V2 (Harvard Dataverse — Official Published Version)
+
+```bibtex
+@data{DVN/TMB4IG_2024,
+  author    = {Souza, Andrey S. and Lucca, Giancarlo and Borges, Eduardo N. and Cardoso, Fabian C. and Dalmazo, Bruno L. and Berri, Rafael},
+  publisher = {Harvard Dataverse},
+  title     = {{Dataset for Intraday Analysis of B3 stock prices}},
+  year      = {2024},
+  version   = {V1},
+  doi       = {10.7910/DVN/TMB4IG},
+  url       = {https://doi.org/10.7910/DVN/TMB4IG}
+}
+```
+
+### BovDB V1 (SBBD 2021)
+
 ```bibtex
 @inproceedings{cardoso2021bovdb,
   title     = {Bovdb: The data set of stock quotes for machine learning on all companies from B3 between 1995 and 2020},
@@ -144,9 +161,6 @@ If you use **BovDB** in scientific publications or academic projects, please cit
   organization = {SBC}
 }
 ```
-
-Text citation:
-> **Cardoso, F., Malska, J., Ramiro, P., Lucca, G., Borges, E. N., Mattos, V. d., and Berri, R. (2021). Bovdb: The data set of stock quotes for machine learning on all companies from B3 between 1995 and 2020. In *Brazilian Symposium on Databases - Dataset Showcase (SBBD)***.
 
 ---
 

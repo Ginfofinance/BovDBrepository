@@ -4,6 +4,8 @@
 
 This document specifies the end-to-end data provenance, origin feeds, extraction procedures, normalization pipelines, and quality gates used to produce the **BovDB** relational dataset.
 
+> **Official Published Dataset (V2)**: Souza, A. S. et al. (2024). *Dataset for Intraday Analysis of B3 stock prices*. Harvard Dataverse. DOI: [10.7910/DVN/TMB4IG](https://doi.org/10.7910/DVN/TMB4IG)
+
 ```mermaid
 graph TD
     subgraph Primary Sources

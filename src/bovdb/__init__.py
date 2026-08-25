@@ -20,8 +20,10 @@ from .visualization import (
 __version__ = "0.1.0"
 
 # Dataset version metadata
-DEFAULT_DATASET_VERSION = "3.0"
-SUPPORTED_DATASET_VERSIONS = ("1.0", "2.0", "3.0")
+# V2 is the latest officially published version (Harvard Dataverse DOI:10.7910/DVN/TMB4IG)
+# V3 is under active development and not yet published
+DEFAULT_DATASET_VERSION = "2.0"
+SUPPORTED_DATASET_VERSIONS = ("1.0", "2.0", "3.0-dev")
 
 __all__ = [
     "get_connection",
