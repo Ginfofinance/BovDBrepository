@@ -1,0 +1,14 @@
+{
+  "dataset": "BovDB",
+  "dataset_version": "2.0.0",
+  "scope": "B3 Listed Equities (1995-2024)",
+  "resolution": "Daily OHLCV + 5-Minute Intraday (price5)",
+  "tables": ["company", "ticker", "price", "price5"],
+  "distribution": {
+    "archive_name": "Database_define.rar",
+    "format": "sqlite",
+    "mirror": "DropBox (Official)",
+    "target_database_file": "DataBase.db",
+    "guidelines_document": "guidelines_database_dropbox.pdf"
+  }
+}

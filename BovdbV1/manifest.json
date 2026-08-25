@@ -1,0 +1,34 @@
+{
+  "dataset": "BovDB",
+  "dataset_version": "1.0.0",
+  "scope": "B3 Listed Equities (1995-2020)",
+  "resolution": "Daily OHLCV",
+  "publication": "SBBD 2021 Dataset Showcase",
+  "tables": ["company", "ticker", "price"],
+  "archives": [
+    {
+      "filename": "DataBase_CSV.zip",
+      "format": "csv",
+      "size_bytes": 51223433,
+      "sha256": "dbe7a02d0d3866bde3036efd88481becb88ae90f4b89e3d0a4222eb7876aa368"
+    },
+    {
+      "filename": "DataBase_JSON.zip",
+      "format": "json",
+      "size_bytes": 98402678,
+      "sha256": "8ab3680650f3110e462cbf33c219aa0fafad3f8b8d22cfdccdaa538698375328"
+    },
+    {
+      "filename": "DataBase.db.zip",
+      "format": "sqlite",
+      "size_bytes": 59998793,
+      "sha256": "c7e50870bf734408135d39ad51be0bd863467d730a41d4a2251330afea19b398"
+    },
+    {
+      "filename": "DataBase.zip",
+      "format": "sqlite",
+      "size_bytes": 96545545,
+      "sha256": "f62af852353bc390bc75465aed615ac509144510107e7f5450f2cfe51af51ec8"
+    }
+  ]
+}

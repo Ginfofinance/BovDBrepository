@@ -1,0 +1,6 @@
+# BovDB Version 3.0 Cryptographic Integrity Hashes
+# Format: SHA256  filename
+# Database binary archive (Database_define.rar):
+# Verify after download using: sha256sum -c checksums.sha256
+#
+# (Official DropBox archive checksum will be validated against upstream archive)
