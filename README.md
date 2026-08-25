@@ -20,13 +20,13 @@
 
 ## Overview
 
-**BovDB** is an open-access, relational dataset of historical stock quotes and intraday data covering all companies listed on the Brazilian Stock Exchange (**B3**), designed for machine learning benchmarks, econometric modeling, time-series forecasting, and algorithmic trading research.
+**BovDB** is an open-access, relational dataset and Python toolkit of historical stock quotes and high-frequency intraday data covering all companies listed on the Brazilian Stock Exchange (**B3**), designed for machine learning benchmarks, econometric modeling, time-series forecasting, and algorithmic trading research.
 
 ### Key Capabilities
 - **Complete Equity Coverage**: Covers all tickers traded on B3 across common (ON), preferred (PN), units (UNT), and Brazilian Depositary Receipts (BDRs).
 - **Corporate Action Adjustments**: Accounts for stock splits, reverse splits (inplits), and bonuses via dedicated `factor` multipliers.
 - **Multi-Resolution Data**: Includes daily historical OHLCV series (1995–Present) along with high-frequency 5-minute intraday bars (`price5`).
-- **Unified Python SDK**: Modular `bovdb` Python package for zero-config SQLite connections, typed data extraction, and interactive visualizers.
+- **Safe Read-Only Python SDK**: Modular `bovdb` Python package opening SQLite connections in strict read-only mode by default to prevent database corruption.
 - **Zero-Configuration Relational Storage**: Stored in a high-performance, single-file SQLite database with straightforward Python integration.
 
 ---
@@ -38,33 +38,6 @@
 | **BovDB v1.0** | [`BovdbV1/`](BovdbV1/) | 1995 – 2020 | Daily | All B3 equities, daily OHLCV, adjustment factors. Formats: CSV, JSON, SQLite (`.zip`). |
 | **BovDB v2.0** | [`BovdbV2/`](BovdbV2/) | 1995 – 2024 | Daily + Intraday | Daily historical quotes + 5-min intraday `price5` (Jan–Jun 2024). DropBox archive. |
 | **BovDB v3.0** | [`BovdbV3/`](BovdbV3/) | 1995 – Present | Daily + Intraday | Modular `bovdb` Python package, CI/CD, complete schema dictionary, multi-mirror links. |
-
----
-
-## Repository Layout
-
-```text
-.
-├── .github/             # CI workflows, issue templates and PR templates
-├── BovdbV1/             # Version 1.0 historical archives (CSV, JSON, SQLite zip)
-├── BovdbV2/             # Version 2.0 download links and guidelines (PDF)
-├── BovdbV3/             # Version 3.0 download links and database guidelines
-├── Codes/               # Example analysis scripts and Jupyter notebooks
-├── DataBase/            # Local directory for SQLite database file (DataBase.db)
-├── docs/                # Architecture, data dictionary, and reproducibility guides
-├── src/bovdb/           # Modular Python package for querying and visualization
-├── .env.example         # Environment configuration template
-├── .gitignore           # Git ignore rules (binaries, databases, caches)
-├── CITATION.cff         # Citation File Format metadata
-├── CODE_OF_CONDUCT.md   # Community and research code of conduct
-├── CONTRIBUTING.md      # Guidelines for contributors
-├── generate_project_map.py # Utility to generate visual repository map
-├── LICENSE.md           # Creative Commons Attribution-NonCommercial 4.0
-├── pyproject.toml       # Python package configuration
-├── reference.md         # Text and BibTeX academic citations
-├── requirements.txt     # Python project dependencies
-└── SECURITY.md          # Vulnerability reporting policy
-```
 
 ---
 
@@ -84,9 +57,8 @@ python -m venv .venv
 # On Linux / macOS:
 source .venv/bin/activate
 
-# Install dependencies and local bovdb package
-pip install -r requirements.txt
-pip install -e .
+# Install base package with visualization tools:
+pip install -e ".[viz,analysis,dev]"
 ```
 
 ### 2. Download the Database
@@ -128,18 +100,18 @@ pip install -e .
 You can query the dataset directly in your research workflows using the `bovdb` package:
 
 ```python
-from bovdb import get_connection, get_daily_prices, get_intraday_5min, plot_candlestick, plot_intraday_5min
+import bovdb
 
-# Automatically connects to DataBase/DataBase.db or BOVDB_PATH
-conn = get_connection()
+# Automatically connects to DataBase/DataBase.db in safe read-only mode
+conn = bovdb.get_connection()
 
 # 1. Fetch split-adjusted daily prices for Petrobras (PETR4)
-df_daily = get_daily_prices(conn, ticker="PETR4", start_date="2023-01-01", end_date="2024-06-30", adjusted=True)
-plot_candlestick(df_daily, ticker_name="PETR4 (Adjusted)")
+df_daily = bovdb.get_daily_prices(conn, ticker="PETR4", start_date="2023-01-01", end_date="2024-06-30", adjusted=True)
+bovdb.plot_candlestick(df_daily, ticker_name="PETR4 (Adjusted)")
 
 # 2. Fetch 5-minute intraday quotes
-df_intra = get_intraday_5min(conn, ticker="PETR4", start_date="2024-06-26", end_date="2024-06-26")
-plot_intraday_5min(df_intra, day="2024-06-26", ticker_name="PETR4")
+df_intra = bovdb.get_intraday_5min(conn, ticker="PETR4", start_date="2024-06-26", end_date="2024-06-26")
+bovdb.plot_intraday_5min(df_intra, day="2024-06-26", ticker_name="PETR4")
 
 conn.close()
 ```
@@ -148,9 +120,11 @@ conn.close()
 
 ## Documentation
 
-- [Architecture & Design](docs/architecture.md) — Relational ER model and ingestion pipeline.
+- [Architecture & Design](docs/architecture.md) — Relational ER model and table structures.
 - [Data Dictionary](docs/data-dictionary.md) — Detailed table schemas (`company`, `ticker`, `price`, `price5`).
-- [Data Provenance & Reproducibility](docs/reproducibility.md) — Guidelines for empirical research, seed setting, and adjustment factor calculations.
+- [Data Provenance & Lineage](docs/provenance.md) — Origin feeds (B3/CVM), data harmonization, and quality gates.
+- [Data Reproducibility Standards](docs/reproducibility.md) — Protocols for machine learning benchmarks and random seed fixing.
+- [Repository Governance](docs/governance.md) — Branch protection rules, PR reviews, and semantic commit standards.
 - [Contributing Guide](CONTRIBUTING.md) — How to propose enhancements and submit pull requests.
 - [Code of Conduct](CODE_OF_CONDUCT.md) — Community standards and academic integrity.
 - [Security Policy](SECURITY.md) — Guidelines for reporting vulnerabilities.
